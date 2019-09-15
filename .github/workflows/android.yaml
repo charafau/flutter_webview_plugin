@@ -1,10 +1,10 @@
-name: Android CI
+name: CI
 
 on: [push]
 
 jobs:
   test:
-    name: Android Tests
+    name: Flutter Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -18,3 +18,4 @@ jobs:
       - run: flutter doctor
       - run: flutter pub get
       - run: example/android/gradlew test -DflutterPath=$FLUTTER_HOME
+      - run: flutter test
